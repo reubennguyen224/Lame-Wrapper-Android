@@ -1,7 +1,9 @@
 LOCAL_PATH := $(call my-dir)
 
     include $(CLEAR_VARS)
-
+    APP_ABI := armeabi-v7a arm64-v8a x86 x86_64
+    LOCAL_LDFLAGS += "-Wl,-z,max-page-size=16384"
+    LOCAL_LDFLAGS += "-Wl,-z,common-page-size=16384"
     LOCAL_MODULE        := androidlame
     LOCAL_SRC_FILES     := AndroidLame.c \
     ./libmp3lame/bitstream.c \
