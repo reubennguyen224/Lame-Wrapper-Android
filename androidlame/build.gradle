@@ -6,7 +6,11 @@ plugins {
 android {
     compileSdk libs.versions.compileSdk.get().toInteger()
     namespace "com.naman14.androidlame"
-
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
     defaultConfig {
         minSdkVersion libs.versions.minSdk.get().toInteger()
         targetSdkVersion libs.versions.targetSdk.get().toInteger()
