@@ -4,6 +4,7 @@
 
 AndroidLame is a wrapper Library for Android/Java around Lame MP3 encoder (http://lame.sourceforge.net/)   
 Built using NDK and Android studio with Gradle plugin.
+This built also support 16KB page size
 
 ## Gradle dependency
 #### build.gradle (project)
