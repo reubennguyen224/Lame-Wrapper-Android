@@ -21,11 +21,11 @@ android {
         }
     }
 
+    ndkVersion libs.versions.ndkVersion.get()
     externalNativeBuild {
         ndkBuild {
             path 'src/main/jni/Android.mk'
         }
-        ndkVersion libs.versions.ndkVersion.get()
     }
 }
 

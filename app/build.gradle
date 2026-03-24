@@ -20,12 +20,12 @@ android {
             proguardFiles.add(file("proguard-rules.pro"))
         }
     }
+    ndkVersion libs.versions.ndkVersion.get()
 
     externalNativeBuild {
         ndkBuild {
             path '../androidlame/src/main/jni/Android.mk'
         }
-        ndkVersion libs.versions.ndkVersion.get()
     }
 }
 
