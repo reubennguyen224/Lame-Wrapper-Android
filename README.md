@@ -1,26 +1,25 @@
 # AndroidLame
 
-[![](https://jitpack.io/v/naman14/TAndroidLame.svg)](https://jitpack.io/#naman14/TAndroidLame)
+[![](https://jitpack.io/v/reubennguyen224/Lame-Wrapper-Android.svg)](https://jitpack.io/#reubennguyen224/Lame-Wrapper-Android)
 
 AndroidLame is a wrapper Library for Android/Java around Lame MP3 encoder (http://lame.sourceforge.net/)   
-Built using NDK and Andorid studio with experimental gradle plugin.
+Built using NDK and Android studio with Gradle plugin.
 
 ## Gradle dependency
 #### build.gradle (project)
 ```gradle
-allprojects {
+dependencyResolutionManagement {
+		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 		repositories {
-			...
-			maven { url "https://jitpack.io" }
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
 		}
 	}
 ```
 #### app/build.gradle
 ```gradle
-apply plugin: 'com.github.dcendents.android-maven' //add it to top of app level build.gradle  
-
 dependencies {
-	        compile 'com.github.naman14:TAndroidLame:1.1'
+	        implementation 'com.github.reubennguyen224:Lame-Wrapper-Android:Tag'
 	}
 ```	
 
@@ -58,7 +57,7 @@ AndroidLame androidLame = new AndroidLame(builder); //or this
 
 ## LameBuilder
 
-LameBuilder is a wrapper around the extra initialisation parameters in Lame.
+LameBuilder is a wrapper around the extra initialization parameters in Lame.
 
 **inSampleRate** - input sample rate in Hz.  default = 44100hz     
 **numChannels** - number of channels in input stream. default=2    
@@ -112,20 +111,9 @@ A wrapper class for actual native implementation and encoding
 `lameFlush(byte[] mp3buf);`  
   flushes the intenal PCM buffers, and returns the final mp3 frames, will also write id3v1 tags (if any) into the bitstream    returns number of bytes output to mp3buf    
   
-  Demo
-===============
-  A sample apk is avilable in [releases](https://github.com/naman14/TAndroidLame/releases).  
-  (Remember to grant permissions from settings on Marshmallow devices or app will crash)
-  
-  Sample apk has two demos -  
-  - Encoding .wav to mp3 and   
-  - Recording audio using AudioRecorder and encoding in real time to mp3    
-    
-<img src="https://raw.githubusercontent.com/naman14/TAndroidLame/master/app/Screenshot1.png" alt="alt text" width="250" height="500">
-<img src="https://raw.githubusercontent.com/naman14/TAndroidLame/master/app/Screenshot2.png" alt="alt text" width="250" height="500">
 
 ## License
-
+This project forked from https://github.com/naman14/TAndroidLame
 >(c) 2015 Naman Dwivedi 
 
 >This is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. 
