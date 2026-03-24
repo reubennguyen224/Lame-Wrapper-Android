@@ -1,13 +1,15 @@
-apply plugin: 'com.android.application'
+plugins {
+    alias(libs.plugins.com.android.application)
+}
 
 android {
-
-    compileSdk 36
+    compileSdk libs.versions.compileSdk.get().toInteger()
     namespace "com.naman14.tandroidlame"
+
     defaultConfig {
         applicationId "com.naman14.tandroidlame"
-        minSdkVersion 21
-        targetSdkVersion 36
+        minSdkVersion libs.versions.minSdk.get().toInteger()
+        targetSdkVersion libs.versions.targetSdk.get().toInteger()
         versionCode 1
         versionName "1.0"
     }
@@ -23,15 +25,13 @@ android {
         ndkBuild {
             path '../androidlame/src/main/jni/Android.mk'
         }
-        ndkVersion '28.0.12674087'
+        ndkVersion libs.versions.ndkVersion.get()
     }
 }
 
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.recyclerview
     implementation project(':androidlame')
-
 }

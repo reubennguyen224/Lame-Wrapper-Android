@@ -1,0 +1,18 @@
+[versions]
+agp = "8.1.1"
+kotlin = "1.9.0"
+appcompat = "1.7.1"
+recyclerview = "1.4.0"
+compileSdk = "36"
+minSdk = "21"
+targetSdk = "36"
+ndkVersion = "28.0.12674087"
+
+[libraries]
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+
+[plugins]
+com-android-application = { id = "com.android.application", version.ref = "agp" }
+com-android-library = { id = "com.android.library", version.ref = "agp" }
