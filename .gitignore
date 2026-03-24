@@ -12,3 +12,4 @@ app/manifest-merger-release-report.txt
 
 app/.externalNativeBuild
 androidlame/.externalNativeBuild
+/.idea/
