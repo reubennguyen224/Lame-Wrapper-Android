@@ -5,14 +5,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,28 +25,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Button record = (Button) findViewById(R.id.record);
-        record.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Mp3AudioRecordActivity.class));
-            }
-        });
+        record.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, Mp3AudioRecordActivity.class)));
 
         Button encode = (Button) findViewById(R.id.encode);
-        encode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, EncodeActivity.class));
-            }
-        });
+        encode.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, EncodeActivity.class)));
 
         Button github = (Button) findViewById(R.id.github);
-        github.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https:github.com/naman14/TAndroidLame")));
-            }
-        });
+        github.setOnClickListener(v -> startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse("https:github.com/naman14/TAndroidLame"))));
 
     }
 
@@ -64,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         switch (requestCode) {
 

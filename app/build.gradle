@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
 
-    compileSdk 34
-    namespace "com.naman14.androidlame"
+    compileSdk 36
+    namespace "com.naman14.tandroidlame"
     defaultConfig {
         applicationId "com.naman14.tandroidlame"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 1
         versionName "1.0"
     }
@@ -30,8 +30,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
     implementation project(':androidlame')
 
 }
