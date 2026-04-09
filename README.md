@@ -7,7 +7,7 @@ Built using NDK and Android studio with Gradle plugin.
 This built also support 16KB page size.
 
 ## Gradle dependency
-#### build.gradle (project)
+#### settings.gradle (project settings)
 ```gradle
 dependencyResolutionManagement {
 		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
